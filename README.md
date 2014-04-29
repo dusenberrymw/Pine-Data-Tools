@@ -4,7 +4,7 @@ Pine-Data-Tools
 Suite of scripts for working with data files (.csv &amp; .txt) and the Pine ANN
 library.
 
-#### Based off of the FastML Phraug project (https://github.com/zygmuntz/phraug)
+#### Based partially on the FastML Phraug project (https://github.com/zygmuntz/phraug)
 
 ## Requirements
 - Python3 installed (and accessible at '/usr/bin/env python3')
@@ -19,7 +19,8 @@ project)
     original data) to finish (trained model, testing stats, predictions).
     Customize this to meet your workflow needs.
 - preprocess.py -> Use this as a first pass through your data for bulk
-conversions.  Customize the 'process()' method for your data.
+conversions, such as converting text features to numeric ones.  Customize the
+'process()' method for your data.
 - csv2pine.py -> Use this to convert the original data into Pine's data format,
 which is very similar to that of Vowpal Wabbit.  Customize the
 'construct_line()' method for your data.
@@ -29,7 +30,8 @@ that to the pipeline.sh file to reproduce the same split.
 - classify.py -> Use this to convert raw prediction probabilities from Pine into
 classes.  Can customize this to change threshold.
 - stats.py -> Use this to calculate stats on how well the model is performing.
-Customize this as needed.
+Customize this as needed.  Can redirect output into file as well.
+- ##### Run with ./pipeline.sh'
 
 ##### Others
 -  automate_passes_pine.py -> Can use this to determine ideal number of passes
