@@ -16,7 +16,7 @@ project)
 ## Workflow
 - Clone this to a directory for the project you're working on
 - Open up pipeline.sh -> This is the main script.  Run this to go from start
-(the original data) to finish (trained model, testing stats, predictions).  
+(the original data) to finish (trained model, testing stats, predictions).
 Customize this to meet your workflow needs.
 - preprocess.py -> Use this as a first pass through your data for bulk
 conversions, such as converting text features to numeric ones.  Customize the
