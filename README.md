@@ -31,7 +31,7 @@ that to the pipeline.sh file to reproduce the same split.
 classes.  Can customize this to change threshold.
 - stats.py -> Use this to calculate stats on how well the model is performing.
 Customize this as needed.  Can redirect output into file as well.
-- ##### Run with ./pipeline.sh'
+- **Run with ./pipeline.sh'**
 
 ##### Others
 -  automate_passes_pine.py -> Can use this to determine ideal number of passes
