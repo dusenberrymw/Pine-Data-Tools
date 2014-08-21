@@ -1,21 +1,21 @@
 #!/bin/bash
-# use './timeit.sh pipeline.sh' to measure execution time
+# use 'lib/timeit.sh pipeline.sh' to measure execution time
 set -v  # echo the commands
 
-preprocess.py Data.csv Data_preprocessed.csv 1
+lib/preprocess.py data/data.csv data/data_preprocessed.csv 1
 
-csv2pine.py Data_preprocessed.csv Data_pineData.txt 1 25
+lib/csv2pine.py data/data_preprocessed.csv data/data_pinedata.txt 1 25
 
-split.py Data_pineData.txt Data_pineTrain.txt Data_pineTest.txt 0.9
+lib/split.py data/data_pinedata.txt data/data_pineTrain.txt data/data_pineTest.txt 0.9 80377
 
-# automate_passes_pine.py Data_pineTrain.txt Data_pineTest.txt 25,30,1 50 1
+# lib/automate_passes_pine.py data/data_pineTrain.txt data/data_pineTest.txt 25,30,1 50 1
 
-pine Data_pineTrain.txt 25,30,1 -f model -p 5 -np 1 -l 0.01
+pine data/data_pineTrain.txt 25,30,1 -f results/model -p 5 -np 1 -l 0.01
 
-pine Data_pineTest.txt _ -t -i model -pf p_raw.txt
+pine data/data_pineTest.txt _ -t -i results/model -pf results/p_raw.txt
 
-classify.py p_raw.txt p_class.txt
+lib/classify.py results/p_raw.txt results/p_class.txt
 
-stats.py Data_pineTest.txt p_class.txt #> stats.txt
+lib/stats.py data/data_pineTest.txt results/p_class.txt > results/stats.txt
 
-# diff -y -W 25 Data_pineTest.txt p_raw.txt
+# diff -y -W 25 data/data_pineTest.txt results/p_raw.txt
