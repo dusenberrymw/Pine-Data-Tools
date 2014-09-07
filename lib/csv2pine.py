@@ -24,9 +24,6 @@ def construct_line(label, line):
     new_line = []
     new_line.append("{0} | ".format(label))
     for i, item in enumerate(line):
-        if not item:  # if item == ''
-            return False  # this line is missing a data point, so skip it
-            #item = 0  # or just set to 0
         # Can edit specific features ('items') here
 
         # now convert to pine style and add to line
