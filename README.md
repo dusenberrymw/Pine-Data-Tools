@@ -1,8 +1,8 @@
 Pine-Data-Tools
 ---
 
-Suite of scripts for working with data files (.csv &amp; .txt) and the Pine ANN
-library.
+Suite of scripts for working with data files (.csv &amp; .txt) and the [Pine ANN
+library](https://github.com/dusenberrymw/Pine).
 
 #### Based partially on the FastML Phraug project (https://github.com/zygmuntz/phraug)
 
